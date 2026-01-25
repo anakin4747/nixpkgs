@@ -84,14 +84,15 @@ buildPythonPackage rec {
     "tests/test_testserver.py"
   ];
 
-  disabledTests = lib.optionals stdenv.hostPlatform.isLinux [
-    "test_docker_version_info"
-    "test_docker_404_unknown_path"
-  ]
-  ++ lib.optionals stdenv.hostPlatform.isDarwin [
-    # PermissionError: [Errno 1] Operation not permitted
-    "test_use_proxy_from_environment"
-  ];
+  disabledTests =
+    lib.optionals stdenv.hostPlatform.isLinux [
+      "test_docker_version_info"
+      "test_docker_404_unknown_path"
+    ]
+    ++ lib.optionals stdenv.hostPlatform.isDarwin [
+      # PermissionError: [Errno 1] Operation not permitted
+      "test_use_proxy_from_environment"
+    ];
 
   meta = {
     changelog = "https://github.com/jawah/niquests/blob/${src.tag}/HISTORY.md";
