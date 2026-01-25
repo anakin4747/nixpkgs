@@ -17,6 +17,11 @@ buildPythonPackage rec {
     hash = "sha256-NIhxymSOxqmpg6E6tibArM4C9RW54ZgzMrF695eVIcU=";
   };
 
+  postPatch = ''
+    # Unknown classifier, likely only once 3.15 is released
+    sed -i "/Programming Language :: Python :: 3.15/d" pyproject.toml
+  '';
+
   build-system = [
     hatch-vcs
     hatchling
