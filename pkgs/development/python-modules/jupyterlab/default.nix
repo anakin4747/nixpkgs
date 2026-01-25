@@ -47,7 +47,7 @@ buildPythonPackage rec {
   offlineCache = yarn-berry_3.fetchYarnBerryDeps {
     inherit src;
     sourceRoot = "${src.name}/jupyterlab/staging";
-    hash = "sha256-3Gvbsi/oi8lTRrCYut126zsksjSSWmfJCoRxDmjne1E=";
+    hash = "sha256-rL8TaN3j0oEm6OdMM6eM2noUi55D+3BmIHV1XI86nB4=";
   };
 
   preBuild = ''
