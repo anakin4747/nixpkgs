@@ -21,7 +21,7 @@ buildPythonPackage (finalAttrs: {
     hash = "sha256-a/w2JxFBm/jqIRnqIB7ZtkdiLnBNjbR0V5SNuau/YxY=";
   };
 
-  build-system =  [
+  build-system = [
     setuptools
     setuptools-scm
   ];
